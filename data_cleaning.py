@@ -18,8 +18,9 @@ def hours_to_min(time):
     return int(time_in_minutes)
 
 
-data = pd.read_csv('240503-240510_SkyScanner_Vilnius_Tokyo.csv')
-df = pd.DataFrame(data)
+df1 = pd.read_csv('240503-240510_SkyScanner_Vilnius_Tokyo.csv')
+df2 = pd.read_csv('240510-240517_SkyScanner_Vilnius_Tokyo.csv')
+df = pd.concat([df1, df2], ignore_index=True)
 
 df['Outbound Flight Duration'] = df['Outbound Flight Duration'].apply(hours_to_min)
 df['Return Flight Duration'] = df['Return Flight Duration'].apply(hours_to_min)
@@ -38,4 +39,6 @@ df['Return Flight Departure Airport'] = df['Return Flight Departure Airport'].st
 df['Return Flight Arrival Airport'] = df['Return Flight Arrival Airport'].str.replace("['", "").str.replace("']", "")
 df['Outbound Flight Arrival + Days'] = pd.to_numeric(df['Outbound Flight Arrival + Days'])
 df['Return Flight Arrival + Days'] = pd.to_numeric(df['Return Flight Arrival + Days'])
+
+df.to_csv('SkyScanner_Vilnius_Tokyo.csv', index=False)
 # print(df)
