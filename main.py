@@ -150,7 +150,6 @@ def scrape_website(outbound_day, return_day):
     return_data = pd.DataFrame(return_flight_data)
     df = pd.concat([overall_df, outbound_data, return_data], axis=1)
     df.to_csv(f'2405{outbound_day}-2405{return_day}_SkyScanner_Vilnius_Tokyo.csv', index=False)
-    print(df)
     return df
 
 
