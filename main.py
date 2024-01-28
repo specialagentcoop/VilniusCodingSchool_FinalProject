@@ -1,8 +1,8 @@
 from bs4 import BeautifulSoup
 import time
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -21,11 +21,11 @@ def scrape_website(outbound_day, return_day):
     return_flight_data = []
 
     # Start service
-    service = Service(ChromeDriverManager().install())
+    service = Service(GeckoDriverManager().install())
     service.start()
 
     # Start driver
-    driver = webdriver.Chrome(service=service)
+    driver = webdriver.Firefox(service=service)
     driver.get(url)
     driver.implicitly_wait(10)
 
@@ -38,7 +38,7 @@ def scrape_website(outbound_day, return_day):
     # Handle 'Show more results'
     show_more_results_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button.BpkButton_bpk-button__YzJlY:nth-child(5)')))
     driver.execute_script('arguments[0].scrollIntoView();', show_more_results_button)
-    time.sleep(5)
+    time.sleep(7)
     show_more_results_button.click()
 
     # Scroll to the bottom
