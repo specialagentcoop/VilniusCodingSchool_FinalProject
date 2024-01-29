@@ -24,6 +24,9 @@ df3 = pd.read_csv('CSV Files/240517-240524_SkyScanner_Vilnius_Tokyo.csv')
 df4 = pd.read_csv('CSV Files/240524-240531_SkyScanner_Vilnius_Tokyo.csv')
 df = pd.concat([df1, df2, df3, df4], ignore_index=True)
 
+
+df['Outbound Flight Date'] = pd.to_datetime(df['Outbound Flight Date'])
+df['Return Flight Date'] = pd.to_datetime(df['Return Flight Date'])
 df['Outbound Flight Duration'] = df['Outbound Flight Duration'].apply(hours_to_min)
 df['Return Flight Duration'] = df['Return Flight Duration'].apply(hours_to_min)
 df['Price'] = pd.to_numeric(df['Price'].str.replace(',', '').str.replace(' €', ''))
@@ -41,6 +44,11 @@ df['Return Flight Departure Airport'] = df['Return Flight Departure Airport'].st
 df['Return Flight Arrival Airport'] = df['Return Flight Arrival Airport'].str.replace("['", "").str.replace("']", "")
 df['Outbound Flight Arrival + Days'] = pd.to_numeric(df['Outbound Flight Arrival + Days'])
 df['Return Flight Arrival + Days'] = pd.to_numeric(df['Return Flight Arrival + Days'])
+df.rename(columns={'Price': 'Price, €',
+                   'Outbound Flight Duration': 'Outbound Flight Duration, min',
+                   'Return Flight Duration': 'Return Flight Duration, min'
+                   }, inplace=True)
+df.dropna()
+df.drop_duplicates()
 
 df.to_csv('CSV Files/SkyScanner_Vilnius_Tokyo.csv', index=False)
-print(df.dtypes)
