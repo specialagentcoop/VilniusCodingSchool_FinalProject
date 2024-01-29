@@ -18,10 +18,10 @@ def hours_to_min(time):
     return int(time_in_minutes)
 
 
-df1 = pd.read_csv('CSV Files/240503-240510_SkyScanner_Vilnius_Tokyo.csv')
-df2 = pd.read_csv('CSV Files/240510-240517_SkyScanner_Vilnius_Tokyo.csv')
-df3 = pd.read_csv('CSV Files/240517-240524_SkyScanner_Vilnius_Tokyo.csv')
-df4 = pd.read_csv('CSV Files/240524-240531_SkyScanner_Vilnius_Tokyo.csv')
+df1 = pd.read_csv('csv_files/240503-240510_SkyScanner_Vilnius_Tokyo.csv')
+df2 = pd.read_csv('csv_files/240510-240517_SkyScanner_Vilnius_Tokyo.csv')
+df3 = pd.read_csv('csv_files/240517-240524_SkyScanner_Vilnius_Tokyo.csv')
+df4 = pd.read_csv('csv_files/240524-240531_SkyScanner_Vilnius_Tokyo.csv')
 df = pd.concat([df1, df2, df3, df4], ignore_index=True)
 
 
@@ -51,4 +51,4 @@ df.rename(columns={'Price': 'Price, €',
 df.dropna()
 df.drop_duplicates()
 
-df.to_csv('CSV Files/SkyScanner_Vilnius_Tokyo.csv', index=False)
+df.to_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv', index=False)
