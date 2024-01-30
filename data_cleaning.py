@@ -51,4 +51,4 @@ df.rename(columns={'Price': 'Price, €',
 df.dropna()
 df.drop_duplicates()
 
-df.to_csv('csv_files/SkyScanner_Vilnius_Tokyo2.csv', index=True)
+df.to_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv', index=True)

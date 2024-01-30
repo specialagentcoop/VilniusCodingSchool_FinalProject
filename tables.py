@@ -71,12 +71,9 @@ pd.set_option('display.width', 500)
 # plt.legend()
 # plt.show()
 
-# Average Price by Designation Airport
-# Shortest, longest average flight time
+# Number 2: Vilnius - Tokyo Flight Price vs Time and Predicted Flight Prices
 
-# Vilnius - Tokyo Flight Price vs Time and Predicted Flight Prices
-
-# df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo2.csv')
+# df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv')
 # df['Overall Time'] = df['Outbound Flight Duration, min']+df['Return Flight Duration, min']
 # print(df)
 #
@@ -99,47 +96,43 @@ pd.set_option('display.width', 500)
 # plt.legend()
 # plt.show()
 
-# Price per Airlines
+# Number 3: Price per Airlines
 
-# df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo2.csv')
+# df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv')
 # filtered_df = df[df['Outbound Flight Airlines'] == df['Return Flight Airlines']]
 # mean_price_df = filtered_df.groupby('Outbound Flight Airlines')['Price, €'].mean().reset_index()
 # sorted_mean_price_df = mean_price_df.sort_values('Price, €', ascending=False)
 # plt.figure(figsize=(14, 10))
 # sns.barplot(data=sorted_mean_price_df, x='Outbound Flight Airlines', y='Price, €', palette='viridis')
-# plt.title('Average Price by Airlines')
-# plt.ylabel('Average Price in Euros')
+# plt.title('Average Price by Airlines', fontsize=16)
+# plt.ylabel('Average Price, €')
 # plt.xticks(rotation=30)
 # plt.grid(True)
 # plt.show()
 
-# Prices by Dates
+# Number 4: Average Price by Date
 
-# Average Price by Date
-
-# df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo2.csv')
-# df['Flight Dates'] = df['Outbound Flight Date'].str[-2:]+'-'+df['Return Flight Date'].str[-2:]
+# df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv')
+# df['Flight Dates'] = 'May '+df['Outbound Flight Date'].str[-2:]+'-'+df['Return Flight Date'].str[-2:]
 # mean_price_df = df.groupby('Flight Dates')['Price, €'].mean()
-# mean_price_df.plot(kind='bar')
-# plt.title('Average Vilnius - Tokyo Flight Price by Date')
+# mean_price_df.plot(kind='bar', color='skyblue')
+# plt.title('Average Vilnius - Tokyo Flight Price by Date', fontsize=16)
 # plt.xlabel('Flight Date')
 # plt.ylabel('Average Price, €')
 # plt.xticks(rotation=0)
-# plt.grid(True)
 # plt.show()
 
-# Correlation between Price and Departure Time
+# Number 5: Correlation Between Price and Departure Time
 
-df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo2.csv')
-df2 = df.sort_values('Outbound Flight Departure Time', ascending=True)
-
-plt.figure(figsize=(8,6))
-sns.scatterplot(x='Outbound Flight Departure Time', y='Price, €', data=df2)
-plt.title('Scatter Plot with Regression Line')
-plt.xlabel('Departure Time')
-plt.ylabel('Price, €')
-plt.xticks(rotation=30)
-plt.grid(True)
-plt.show()
+# df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv')
+# sorted_df = df.sort_values('Outbound Flight Departure Time', ascending=True)
+# plt.figure(figsize=(8, 6))
+# sns.scatterplot(x='Outbound Flight Departure Time', y='Price, €', data=sorted_df)
+# plt.title('Correlation Between Price and Departure Time')
+# plt.xlabel('Departure Time')
+# plt.ylabel('Price, €')
+# plt.xticks(rotation=30)
+# plt.grid(True)
+# plt.show()
 
 
