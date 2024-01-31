@@ -17,6 +17,3 @@ Used libraries: BeautifulSoup, Selenium, Pandas, MatplotLib, SeaBorn, scikit-lea
 
 [scraping.pyscraping.py](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/blob/23aac3d9f26254b4096146b71a2de4e652f6cf36/scraping.py)
 
-![Screenshot 2024-01-31 204245](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/3c5fd435-772e-47fd-8d5e-16071114b5f6)
-
-
