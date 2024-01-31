@@ -5,13 +5,13 @@
 
 This is the final project for Vilnius Coding School DATA ANALYTICS AND FUNDAMENTALS OF PYTHON PROGRAMMING course.
 
-Project goal:
+Project Goal
 
 The goal of the project is to analyze data for the Vilnius-Tokyo-Vilnius flight route in May 2024, with a focus on identifying factors that influence flight prices.
 
 We used Python programming language and CSV files.
 
-## Applied Knowledge
+### Applied Knowledge
 
 Used libraries: BeautifulSoup, Selenium, Pandas, Matplotlib, seaborn, scikit-learn.
 
