@@ -1,4 +1,4 @@
-# Vilnius-Tokyo-Vilnius ScyScenner May 2024 Flights Analysis
+# Vilnius-Tokyo-Vilnius ScyScanner May 2024 Flights Analysis
 
 ## Details
 ### Created by: Ugnė Petravičiūtė ir Laura Budrytė
