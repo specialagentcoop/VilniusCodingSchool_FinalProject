@@ -3,7 +3,7 @@
 ## Details
 ### Created by: Ugnė Petravičiūtė and Laura Budrytė
 
-This code was written for the final project of Vilnius Coding School, Data Analytics and Fundamentals of Python Programming course.
+This code was developed for the final project of the Vilnius Coding School's Data Analytics and Fundamentals of Python Programming course.
 
 ### Project Goal
 
