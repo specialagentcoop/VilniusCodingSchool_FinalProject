@@ -41,3 +41,11 @@ https://www.skyscanner.net/transport/flights/vno/tyoa/240524/240531/?adultsv2=1&
 
 1) The Pandas library was used to concatenate four files containing scraped data. Additionally, Pandas was used for data cleaning and convertion (to_datetime, to_numeric, apply, replace, rename, dropna, drop_duplicates).
 2) We designed a function to convert time to minutes which is essential for further calculations.
+
+### Moving Data to SQL
+
+[move_to_sql.py](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/blob/08fc12f9022a7b0058dfa89e3dddc3bb3e0f2cee/move_to_sql.py)
+
+1) We utilized Pandas and psycopg2 libraries to securely store our data in Postgres.
+
+### Data Analysis and Depiction
