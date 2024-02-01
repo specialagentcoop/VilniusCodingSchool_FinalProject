@@ -3,7 +3,7 @@ import psycopg2
 
 df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv')
 
-#Push data to Postgres
+# Push data to Postgres
 
 connection = psycopg2.connect(database='skyscanner', host='localhost', user='postgres', password='Ugne13')
 cursor = connection.cursor()
