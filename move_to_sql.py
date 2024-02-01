@@ -51,3 +51,4 @@ values = df.values
 cursor.executemany(insert_query, values)
 
 connection.commit()
+connection.close()
