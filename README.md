@@ -22,6 +22,7 @@ Used libraries: BeautifulSoup, Selenium, Pandas, Matplotlib, Seaborn, scikit-lea
 1) We used the Selenium library to handle cookies as well as to create the visibility of all results on the page.
 2) Then, we utilized the BeautifulSoup library to gather all required data.
 3) Finally, the Pandas library was used to merge the collected data and create a dataframe.
+4) We designed the scraping as a function to have the flexibility in indicating dates we want to collect data for.
 
 Scraped URLs
 
