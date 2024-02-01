@@ -34,7 +34,7 @@ plt.title("Vilnius-Tokyo-Vilnius Flight Price vs Time and Predicted Flight Price
 plt.legend()
 plt.show()
 
-# Number 2: Price per Airlines
+# Number 2: Average Price by Airlines
 
 df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv')
 filtered_df = df[df['Outbound Flight Airlines'] == df['Return Flight Airlines']]
@@ -50,7 +50,7 @@ for i in data.containers:
     data.bar_label(i)
 plt.show()
 
-# Number 3: Average Price by Date
+# Number 3: Average Vilnius-Tokyo-Vilnius Flight Price by Date
 
 df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv')
 df['Flight Dates'] = 'May '+df['Outbound Flight Date'].str[-2:]+'-'+df['Return Flight Date'].str[-2:]
@@ -64,7 +64,7 @@ for bar in data.patches:
     plt.text(bar.get_x()+bar.get_width()/2, bar.get_height(), round(bar.get_height(), 2), ha='center', va='bottom')
 plt.show()
 
-# Number 4: Correlation Between Price and Departure Time
+# Number 4: Correlation Between Price and Departure Time From VNO
 
 df = pd.read_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv')
 sorted_df = df.sort_values('Outbound Flight Departure Time', ascending=True)
