@@ -40,7 +40,7 @@ https://www.skyscanner.net/transport/flights/vno/tyoa/240524/240531/?adultsv2=1&
 [data_cleaning.py](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/blob/69b4a19ab97208fc83d0326cbf580e7f7fccb72b/data_cleaning.py)
 
 1) The Pandas library was used to concatenate four files containing scraped data. Additionally, Pandas was used for data cleaning and convertion (to_datetime, to_numeric, apply, replace, rename, dropna, drop_duplicates).
-2) We designed a function to convert time to minutes which is essential for further calculations.
+2) We designed a function to convert time to minutes which is essential for mathematical calculations.
 
 ### Moving Data to SQL
 
