@@ -86,8 +86,8 @@ This visualization shows most common connecting international airports for Vilni
 
 ### Conclusion
 
-- The analysis of flights shows that the longer the flight takes, the cheaper it is. 
+- The analysis of flights shows that the longer the flight takes, the cheaper it is. This prediction is only applicable for near future.
+- In terms of dates, it is cheapest to fly on May 10-17 (average price is 1,698 Euros), possibly due to national celebrations in Japan. May 3-5 encompass Constitution Memorial Day, Greenery Day, and Children's Day. Therefore, flights for May 03-10 have the highest average price (2,099 Euros).
 - Additionally, the most cost-effective airline is Scandinavian Airlines. The average price for a flight with Scandinavian Airlines is 970 Euros. Meanwhile, the most expensive airline is Air France, where a flight costs an average of 2,808 Euros. 
-- In terms of dates, it is cheaper to fly on May 10-17, possibly due to national celebrations in Japan. May 3-5 encompass Constitution Memorial Day, Greenery Day, and Children's Day. Therefore, flights for May 03-10 have the highest average price (2,099 Euros).
 - When considering the departure time from VNO in relation to the price, the earliest and latest departures offer the lowest prices, while the highest prices are for midday departures at 11 am. 
 - Additionally, we examined the top airports through which one can travel to Tokyo, and the most popular routes lead through Helsinki, Frankfurt, and Istanbul.
