@@ -21,7 +21,7 @@ Used libraries: BeautifulSoup, Selenium, Pandas, Matplotlib, Seaborn, scikit-lea
 
 1) We used the Selenium library to handle cookies as well as to create the visibility of all results on the page.
 2) Then, we utilized the BeautifulSoup library to gather all required data.
-3) Finally, the Pandas library was used to merge the collected data and create a dataframe.
+3) Finally, the Pandas library was used to merge the collected data and create CSV files to store scraped data.
 4) We designed the scraping as a function to have the flexibility in indicating dates we want to collect data for.
 
 Scraped URLs
@@ -34,3 +34,10 @@ https://www.skyscanner.net/transport/flights/vno/tyoa/240510/240517/?adultsv2=1&
 https://www.skyscanner.net/transport/flights/vno/tyoa/240517/240524/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&ref=home&rtn=1
 - May 24-31:
 https://www.skyscanner.net/transport/flights/vno/tyoa/240524/240531/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&ref=home&rtn=1
+
+### Data Cleaning
+
+[data_cleaning.py](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/blob/69b4a19ab97208fc83d0326cbf580e7f7fccb72b/data_cleaning.py)
+
+1) The Pandas library was used to concatenate four files containing scraped data. Additionally, Pandas was used for data cleaning and convertion (to_datetime, to_numeric, apply, replace, rename, dropna, drop_duplicates).
+2) We designed a function to convert time to minutes which is needed for further calculations.
