@@ -52,23 +52,35 @@ https://www.skyscanner.net/transport/flights/vno/tyoa/240524/240531/?adultsv2=1&
 
 [tables.py](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/blob/e94c6ae277b3316ada600109e15edbe4ff29ef43/tables.py)
 
-- **Vilnius-Tokyo-Vilnius Flight Price vs Time and Predicted Flight Prices**
+In this project file all analyses and graphs were made:
+
+* **Vilnius-Tokyo-Vilnius Flight Price vs Time and Predicted Flight Prices**
+
+This visualization shows how the flight prices depend on the flight time in the analyzed data and what are the predictions.
 
 ![Screenshot 2024-01-31 204245](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/30eed034-00f6-4273-831f-4b81ce39a3e2)
 
-- **Average Price by Airlines**
+* **Average Vilnius-Tokyo-Vilnius Flight Price by Date**
 
-![Screenshot 2024-01-31 204439](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/e93bccc2-0f3a-4956-93d1-d014350ac181)
-
-- **Average Vilnius-Tokyo-Vilnius Flight Price by Date**
+In this visualization average flights' prices are displayed by outbound and return flight dates.
 
 ![Screenshot 2024-01-31 204518](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/4f088e92-cd31-4509-bdd2-70a240caf70b)
 
-- **Correlation Between Price and Departure Time From VNO**
+* **Average Price by Airlines**
+
+This visualization shows what are the average prices for each airline when both outbound and return flights are operated by the same airline.
+
+![Screenshot 2024-01-31 204439](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/e93bccc2-0f3a-4956-93d1-d014350ac181)
+
+* **Correlation Between Price and Departure Time From VNO**
+
+The correlation between outbound flights from Vilnius departure time and flights' prices is shown in this visualization. It is also shown the frequency of flights for each time.
 
 ![Screenshot 2024-01-31 204549](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/dd5b3af8-b7bb-492a-9ef6-19405fcb8526)
 
-- **Top 10 Connecting Airports**
+* **Top 10 Connecting Airports**
+
+This visualization shows most common connecting international airports for Vilnius-Tokyo-Vilnius route.
 
 ![Screenshot 2024-01-31 204626](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/95439d35-531d-476e-a4fa-183ddefadac7)
 
