@@ -1,19 +1,19 @@
 # Vilnius-Tokyo-Vilnius ScyScanner May 2024 Flights Analysis
 
 ## Details
-### Created by: Ugnė Petravičiūtė ir Laura Budrytė
+### Created by: Ugnė Petravičiūtė and Laura Budrytė
 
-This is the final project for Vilnius Coding School DATA ANALYTICS AND FUNDAMENTALS OF PYTHON PROGRAMMING course.
+This code was written for the final project of Vilnius Coding School, Data Analytics and Fundamentals of Python Programming course.
 
 ### Project Goal
 
-The goal of the project is to analyze data for the Vilnius-Tokyo-Vilnius flight route in May 2024, with a focus on identifying factors that influence flight prices.
+The goal of the project is to analyze data for the Vilnius-Tokyo-Vilnius flight route in May 2024, with a focus on identifying factors that influence flight prices. We selected four date ranges for the week-long trip analysis: May 03-10, May 10-17, May 17-24, and May 24-31, a total of 2,582 flights.
 
-We used Python programming language and CSV files.
+We primaraly used Python programming language to complete the project, alongside Postgres and CSV for data storage. 
 
 ### Applied Knowledge
 
-Used libraries: BeautifulSoup, Selenium, Pandas, Matplotlib, seaborn, scikit-learn.
+Used libraries: BeautifulSoup, Selenium, Pandas, Matplotlib, Seaborn, scikit-learn, psycopg2.
 
 ### Scraping
 
