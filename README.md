@@ -13,7 +13,7 @@ We primaraly used Python programming language to complete the project, alongside
 
 ### Applied Knowledge
 
-Used libraries: BeautifulSoup, Selenium, Pandas, Matplotlib, Seaborn, scikit-learn, psycopg2.
+_Used imports_: BeautifulSoup, Selenium, Pandas, Matplotlib, Seaborn, scikit-learn, psycopg2.
 
 ### Scraping
 
@@ -24,7 +24,7 @@ Used libraries: BeautifulSoup, Selenium, Pandas, Matplotlib, Seaborn, scikit-lea
 3) Finally, the Pandas library was used to merge the collected data and create CSV files to store scraped data.
 4) We designed the scraping as a function to have the flexibility in indicating dates we want to collect data for.
 
-Scraped URLs
+_Scraped URLs_
 
 - May 3-10:
 https://www.skyscanner.net/transport/flights/vno/tyoa/240503/240510/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&ref=home&rtn=1
@@ -52,30 +52,42 @@ https://www.skyscanner.net/transport/flights/vno/tyoa/240524/240531/?adultsv2=1&
 
 [tables.py](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/blob/e94c6ae277b3316ada600109e15edbe4ff29ef43/tables.py)
 
-- Vilnius-Tokyo-Vilnius Flight Price vs Time and Predicted Flight Prices
+In this project file all analyses and graphs were made:
+
+* **Vilnius-Tokyo-Vilnius Flight Price vs Time and Predicted Flight Prices**
+
+This visualization shows how the flight prices depend on the flight time in the analyzed data and what are the predictions.
 
 ![Screenshot 2024-01-31 204245](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/30eed034-00f6-4273-831f-4b81ce39a3e2)
 
-- Average Price by Airlines
+* **Average Vilnius-Tokyo-Vilnius Flight Price by Date**
 
-![Screenshot 2024-01-31 204439](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/e93bccc2-0f3a-4956-93d1-d014350ac181)
-
-- Average Vilnius-Tokyo-Vilnius Flight Price by Date
+In this visualization average flights' prices are displayed by outbound and return flight dates.
 
 ![Screenshot 2024-01-31 204518](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/4f088e92-cd31-4509-bdd2-70a240caf70b)
 
-- Correlation Between Price and Departure Time From VNO
+* **Average Price by Airlines**
+
+This visualization shows what are the average prices for each airline when both outbound and return flights are operated by the same airline.
+
+![Screenshot 2024-01-31 204439](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/e93bccc2-0f3a-4956-93d1-d014350ac181)
+
+* **Correlation Between Price and Departure Time From VNO**
+
+The correlation between outbound flights from Vilnius departure time and flights' prices is shown in this visualization. It is also shown the frequency of flights for each time.
 
 ![Screenshot 2024-01-31 204549](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/dd5b3af8-b7bb-492a-9ef6-19405fcb8526)
 
-- Top 10 Connecting Airports
+* **Top 10 Connecting Airports**
+
+This visualization shows most common connecting international airports for Vilnius-Tokyo-Vilnius route.
 
 ![Screenshot 2024-01-31 204626](https://github.com/specialagentcoop/VilniusCodingSchool_FinalProject/assets/156001901/95439d35-531d-476e-a4fa-183ddefadac7)
 
 ### Conclusion
 
-- The analysis of flights shows that the longer the flight takes, the cheaper it is. 
+- The analysis of flights shows that the longer the flight takes, the cheaper it is. This prediction is only applicable for near future.
+- In terms of dates, it is cheapest to fly on May 10-17 (average price is 1,698 Euros), possibly due to national celebrations in Japan. May 3-5 encompass Constitution Memorial Day, Greenery Day, and Children's Day. Therefore, flights for May 03-10 have the highest average price (2,099 Euros).
 - Additionally, the most cost-effective airline is Scandinavian Airlines. The average price for a flight with Scandinavian Airlines is 970 Euros. Meanwhile, the most expensive airline is Air France, where a flight costs an average of 2,808 Euros. 
-- In terms of dates, it is cheaper to fly on May 10-17, possibly due to national celebrations in Japan. May 3-5 encompass Constitution Memorial Day, Greenery Day, and Children's Day. Therefore, flights for May 03-10 have the highest average price (2,099 Euros).
 - When considering the departure time from VNO in relation to the price, the earliest and latest departures offer the lowest prices, while the highest prices are for midday departures at 11 am. 
 - Additionally, we examined the top airports through which one can travel to Tokyo, and the most popular routes lead through Helsinki, Frankfurt, and Istanbul.
