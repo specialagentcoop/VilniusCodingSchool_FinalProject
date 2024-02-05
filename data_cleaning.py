@@ -4,6 +4,7 @@ pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 500)
 
+# Function to convert time to minutes for further calculations
 def hours_to_min(time):
     time_in_minutes = 0
     for value in time:
@@ -17,12 +18,14 @@ def hours_to_min(time):
     return int(time_in_minutes)
 
 
+# Concatenate scraped files into one database
 df1 = pd.read_csv('csv_files/240503-240510_SkyScanner_Vilnius_Tokyo.csv')
 df2 = pd.read_csv('csv_files/240510-240517_SkyScanner_Vilnius_Tokyo.csv')
 df3 = pd.read_csv('csv_files/240517-240524_SkyScanner_Vilnius_Tokyo.csv')
 df4 = pd.read_csv('csv_files/240524-240531_SkyScanner_Vilnius_Tokyo.csv')
 df = pd.concat([df1, df2, df3, df4], ignore_index=True)
 
+# Clean concatenated data
 df['Outbound Flight Date'] = pd.to_datetime(df['Outbound Flight Date'])
 df['Return Flight Date'] = pd.to_datetime(df['Return Flight Date'])
 df['Outbound Flight Duration, min'] = df['Outbound Flight Duration'].apply(hours_to_min)
@@ -46,4 +49,6 @@ df.rename(columns={'Price': 'Price, €'}, inplace=True)
 df.dropna()
 df.drop_duplicates()
 
+# Convert clean data to CSV file
 df.to_csv('csv_files/SkyScanner_Vilnius_Tokyo.csv', index=True)
+

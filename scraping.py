@@ -14,8 +14,9 @@ pd.set_option('display.width', 500)
 
 
 def scrape_website(outbound_day, return_day):
-
-    url = f'https://www.skyscanner.net/transport/flights/vno/tyoa/2405{outbound_day}/2405{return_day}/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&ref=home&rtn=1'
+    url = f'https://www.skyscanner.net/transport/flights/vno/tyoa/2405{outbound_day}/2405{return_day}' \
+          f'/?adultsv2=1&cabinclass=economy&childrenv2=&inboundaltsenabled=false&outboundaltsenabled=' \
+          f'false&preferdirects=false&ref=home&rtn=1'
     overall_data = []
     outbound_flight_data = []
     return_flight_data = []
@@ -36,13 +37,14 @@ def scrape_website(outbound_day, return_day):
     time.sleep(20)
 
     # Handle 'Show more results'
-    show_more_results_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'button.BpkButton_bpk-button__YzJlY:nth-child(5)')))
+    show_more_results_button = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, 'button.BpkButton_bpk-button__YzJlY:nth-child(5)')))
     driver.execute_script('arguments[0].scrollIntoView();', show_more_results_button)
     time.sleep(7)
     show_more_results_button.click()
 
     # Scroll to the bottom
-    for _ in range(65): #65
+    for _ in range(65):  # 65
         driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
         time.sleep(2)
 
@@ -55,8 +57,8 @@ def scrape_website(outbound_day, return_day):
     return_flights = soup.find_all('div', class_='LegDetails_container__MTkyZ UpperTicketBody_leg__MmNkN')[1::2]
 
     for flight in flights:
-        outbound_date = '2024-05-'+outbound_day
-        return_date = '2024-05-'+return_day
+        outbound_date = '2024-05-' + outbound_day
+        return_date = '2024-05-' + return_day
         price = flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--lg__NjNhN').text.strip()
 
         overall_data.append({
@@ -71,20 +73,31 @@ def scrape_website(outbound_day, return_day):
         if outbound_airlines_element:
             outbound_airlines = outbound_airlines_element['alt']
         else:
-            outbound_airlines = outbound_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--xs__ZDJmY').text.strip()
+            outbound_airlines = outbound_flight.find('span', class_='BpkText_bpk-text__MWZkY '
+                                                                    'BpkText_bpk-text--xs__ZDJmY').text.strip()
 
-        outbound_flight_times = outbound_flight.find_all('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--subheading__NzkwO')
-        outbound_departure_time = [outbound_flight_time.text.strip() for outbound_flight_time in outbound_flight_times[0::2]]
-        outbound_arrival_time = [outbound_flight_time.text.strip() for outbound_flight_time in outbound_flight_times[1::2]]
+        outbound_flight_times = outbound_flight.find_all('span', class_='BpkText_bpk-text__MWZkY '
+                                                                        'BpkText_bpk-text--subheading__NzkwO')
+        outbound_departure_time = [outbound_flight_time.text.strip() for outbound_flight_time in
+                                   outbound_flight_times[0::2]]
+        outbound_arrival_time = [outbound_flight_time.text.strip() for outbound_flight_time in
+                                 outbound_flight_times[1::2]]
 
-        outbound_arrival_date_element = outbound_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--caption__MTIzM')
+        outbound_arrival_date_element = outbound_flight.find('span', class_='BpkText_bpk-text__MWZkY '
+                                                                            'BpkText_bpk-text--caption__MTIzM')
         outbound_arrival_date = outbound_arrival_date_element.text.strip() if outbound_arrival_date_element else '0'
 
-        outbound_flight_duration = outbound_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--xs__ZDJmY Duration_duration__NmUyM').text.strip()
+        outbound_flight_duration = outbound_flight.find('span', class_='BpkText_bpk-text__MWZkY '
+                                                                       'BpkText_bpk-text--xs__ZDJmY '
+                                                                       'Duration_duration__NmUyM').text.strip()
 
-        outbound_flight_stops_number = outbound_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--xs__ZDJmY LegInfo_stopsLabelRed__NTY2Y').text.strip()
+        outbound_flight_stops_number = outbound_flight.find('span', class_='BpkText_bpk-text__MWZkY '
+                                                                           'BpkText_bpk-text--xs__ZDJmY '
+                                                                           'LegInfo_stopsLabelRed__NTY2Y').text.strip()
 
-        outbound_airports = outbound_flight.find_all('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--body-default__Y2M3Z LegInfo_routePartialCityTooltip__NTE4Z')
+        outbound_airports = outbound_flight.find_all('span', class_='BpkText_bpk-text__MWZkY '
+                                                                    'BpkText_bpk-text--body-default__Y2M3Z '
+                                                                    'LegInfo_routePartialCityTooltip__NTE4Z')
         outbound_from_airport = [outbound_airport.text.strip() for outbound_airport in outbound_airports[0::2]]
         outbound_to_airport = [outbound_airport.text.strip() for outbound_airport in outbound_airports[1::2]]
 
@@ -109,20 +122,28 @@ def scrape_website(outbound_day, return_day):
         if return_airlines_element:
             return_airlines = return_airlines_element['alt']
         else:
-            return_airlines = return_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--xs__ZDJmY').text.strip()
+            return_airlines = return_flight.find('span',
+                                                 class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--xs__ZDJmY').text.strip()
 
-        return_flight_times = return_flight.find_all('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--subheading__NzkwO')
+        return_flight_times = return_flight.find_all('span', class_='BpkText_bpk-text__MWZkY '
+                                                                    'BpkText_bpk-text--subheading__NzkwO')
         return_departure_time = [return_flight_time.text.strip() for return_flight_time in return_flight_times[0::2]]
         return_arrival_time = [return_flight_time.text.strip() for return_flight_time in return_flight_times[1::2]]
 
-        return_arrival_date_element = return_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--caption__MTIzM')
+        return_arrival_date_element = return_flight.find('span', class_='BpkText_bpk-text__MWZkY '
+                                                                        'BpkText_bpk-text--caption__MTIzM')
         return_arrival_date = return_arrival_date_element.text.strip() if return_arrival_date_element else '0'
 
-        return_flight_duration = return_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--xs__ZDJmY Duration_duration__NmUyM').text.strip()
+        return_flight_duration = return_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--xs__ZDJmY'
+                                                                   'Duration_duration__NmUyM').text.strip()
 
-        return_flight_stops_number = return_flight.find('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--xs__ZDJmY LegInfo_stopsLabelRed__NTY2Y').text.strip()
+        return_flight_stops_number = return_flight.find('span', class_='BpkText_bpk-text__MWZkY '
+                                                                       'BpkText_bpk-text--xs__ZDJmY '
+                                                                       'LegInfo_stopsLabelRed__NTY2Y').text.strip()
 
-        return_airports = return_flight.find_all('span', class_='BpkText_bpk-text__MWZkY BpkText_bpk-text--body-default__Y2M3Z LegInfo_routePartialCityTooltip__NTE4Z')
+        return_airports = return_flight.find_all('span', class_='BpkText_bpk-text__MWZkY '
+                                                                'BpkText_bpk-text--body-default__Y2M3Z '
+                                                                'LegInfo_routePartialCityTooltip__NTE4Z')
         return_from_airport = [return_airport.text.strip() for return_airport in return_airports[0::2]]
         return_to_airport = [return_airport.text.strip() for return_airport in return_airports[1::2]]
 
@@ -145,6 +166,7 @@ def scrape_website(outbound_day, return_day):
     service.stop()
     driver.quit()
 
+    # Create CSV file and return a dataframe
     overall_df = pd.DataFrame(overall_data)
     outbound_data = pd.DataFrame(outbound_flight_data)
     return_data = pd.DataFrame(return_flight_data)
@@ -153,4 +175,5 @@ def scrape_website(outbound_day, return_day):
     return df
 
 
+# Run function
 scrape_website('24', '31')
