@@ -1,7 +1,7 @@
 # Vilnius-Tokyo-Vilnius SkyScanner May 2024 Flights Analysis
 
 ## Details
-### Created by: Ugnė Petravičiūtė and Laura Budrytė
+### Created by: Ugnė Petravičiūtė
 
 This code was developed for the final project of the Vilnius Coding School's Data Analytics and Fundamentals of Python Programming course.
 
